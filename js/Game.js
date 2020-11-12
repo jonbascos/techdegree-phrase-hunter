@@ -65,7 +65,7 @@ removeLife() {
     this.missed += 1
     if(this.missed < 5) {
         scoreBoard[5 - this.missed].src = 'images/lostHeart.png'
-    } else if(this.missed > 5) {
+    } else if(this.missed === 5) {
         this.gameOver()
     }
 }
@@ -79,7 +79,7 @@ gameOver(gameWon) {
     overlay.style.display = 'block'
     if(this.missed < 5 && this.checkForWin()) {
         gameOverMessage.innerText = 'Good Job! You WON!'
-    } else if(this.missed > 5) {
+    } else if(this.missed === 5) {
         gameOverMessage.innerText = "I'm sorry!  You lost!"
     }
 };
