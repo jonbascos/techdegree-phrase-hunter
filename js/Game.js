@@ -14,16 +14,11 @@ class Game {
 */
 createPhrases() {
     const phraseArray = [
-        "Life is like a box of chocolates",
-        "Pop quiz hot shot",
-        "This is the phrase that pays",
-        "How you doing",
-        "Joey doesnt share food",
-        "Dont panic",
-        "Think Big",
-        "Think Small",
-        "Be excellent to each other",
-        "Party on dudes"
+        {phrase: "Life is like a box of chocolates"},
+        {phrase: "How you doing"},
+        {phrase: "Joey doesnt share food"},
+        {phrase: "Be excellent to each other"},
+        {phrase: "Party on dudes"}
     ]
     return phraseArray
 };
@@ -35,7 +30,7 @@ createPhrases() {
 getRandomPhrase() {
     const phrases = this.phrases
     const randomNumber = Math.floor(Math.random() * phrases.length)
-    return phrases[randomNumber]
+    return phrases[randomNumber].phrase
 };
 
 /**
@@ -44,11 +39,10 @@ getRandomPhrase() {
 startGame() {
     const overlay = document.querySelector('#overlay')
     overlay.style.display = 'none'
-    const newPhrase = this.getRandomPhrase()
-    const phrase = new Phrase(newPhrase)
-    this.activePhrase = newPhrase
-    phrase.addPhraseToDisplay()
+    this.activePhrase = new Phrase(this.getRandomPhrase())
+    this.activePhrase.addPhraseToDisplay()
     console.log('Active phrase: ', this.activePhrase)
+    console.log(typeof this.activePhrase)
 } 
 
 /**

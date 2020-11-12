@@ -9,7 +9,6 @@
     }
 
     addPhraseToDisplay() {
-        // const phraseSplit = this.phrase.split('')
         const phraseContainer = document.querySelector('#phrase ul')
         const phraseLI = document.createElement('li')
         let hiddenPhrase = ''
@@ -31,25 +30,18 @@
 * @param (string) letter - Letter to check
 */
 checkLetter(letter) {
-    let selectedLetter = letter
-    // const phraseSplit = this.phrase.split('') 
-    return this.phraseSplit.includes(selectedLetter)
+    return this.phraseSplit.includes(letter)
 };
 
 /**
 * Displays passed letter on screen after a match is found
 * @param (string) letter - Letter to display
 */
-showMatchedLetter(letter) {
-    let matchedLetter = checkLetter(letter)
-    if(matchedLetter) {
-        const phraseContainer = document.querySelector('#phrase ul li')
-        phraseContainer.forEach(match => {
-            if(match.className == `hide letter ${matchedLetter}`) {
-                // Changes space from 'hide' to 'show' so we can see the letter
-                match.className = `show letter ${matchedLetter}`
-            }
-        })
+    showMatchedLetter(letter) {
+       const matchedLetter = document.getElementsByClassName(letter)
+       console.log(matchedLetter)
+       for(let i = 0; i < matchedLetter.length; i++) {
+           matchedLetter[i].classList.replace('hide', 'show')
+       }
     }
- };
 }
