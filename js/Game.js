@@ -51,15 +51,8 @@ startGame() {
 won
 */
 checkForWin() {
-    const phraseContainer = document.querySelector('#phrase ul li')
-    let hiddenLetters = 0
-    phraseContainer.forEach(phraseLetter => {
-        if(phraseLetter.className.includes('hide')) {
-            hiddenLetters += 1
-        }
-    })
-    // If the number of hidden letters is Zero, that means all spaces are revieled.  
-    hiddenLetters == 0 ? true : false
+    const allLetters = document.querySelectorAll('.hide')
+    return allLetters.length === 0
 };
 
 /**
@@ -71,12 +64,11 @@ removeLife() {
     const scoreBoard = document.querySelectorAll('#scoreboard img')
     this.missed += 1
     if(this.missed < 5) {
-        this.scoreBoard[5 - this.missed].src = 'images/lostHeart.png'
+        scoreBoard[5 - this.missed].src = 'images/lostHeart.png'
     } else if(this.missed > 5) {
         this.gameOver()
     }
-};
-
+}
 /**
 * Displays game over message
 * @param {boolean} gameWon - Whether or not the user won the game
