@@ -83,4 +83,25 @@ gameOver(gameWon) {
         gameOverMessage.innerText = "I'm sorry!  You lost!"
     }
 };
+
+/**
+* Handles onscreen keyboard button clicks
+* @param (HTMLButtonElement) button - The clicked button element
+*/
+handleInteraction(button) {
+    console.log(button.textContent);
+    if(button.className === 'key') {
+        if(game.activePhrase.checkLetter(button.textContent)) {
+            button.classList.add('chosen')
+            game.activePhrase.showMatchedLetter(button.textContent)
+
+           if(this.checkForWin()) {
+               this.gameOver()
+           }
+        } else {
+            button.classList.add('wrong')
+            this.removeLife()
+        }
+    }
+    };
 }
