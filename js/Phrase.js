@@ -8,6 +8,7 @@
         this.phraseSplit = this.phrase.split('')
     }
 
+    // Places the phrase as blank boxes into the DOM
     addPhraseToDisplay() {
         const phraseContainer = document.querySelector('#phrase ul')
         const phraseLI = document.createElement('li')
@@ -16,10 +17,8 @@
             let currentLetter = this.phraseSplit[i]
             if(currentLetter === ' ') {
                 hiddenPhrase += `<li class="space"> </li>`
-                
             } else {
                 hiddenPhrase += `<li class="hide letter ${currentLetter}">${currentLetter}</li>`
-                
             }
               phraseContainer.innerHTML = hiddenPhrase
         }
