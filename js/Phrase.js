@@ -11,7 +11,6 @@
     // Places the phrase as blank boxes into the DOM
     addPhraseToDisplay() {
         const phraseContainer = document.querySelector('#phrase ul')
-        const phraseLI = document.createElement('li')
         let hiddenPhrase = ''
         for(let i = 0; i < this.phraseSplit.length; i++) {
             let currentLetter = this.phraseSplit[i]

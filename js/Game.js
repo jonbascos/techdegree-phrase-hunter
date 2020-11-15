@@ -71,7 +71,7 @@ removeLife() {
 * Displays game over message
 * @param {boolean} gameWon - Whether or not the user won the game
 */
-gameOver(gameWon) {
+gameOver() {
     const overlay = document.querySelector('#overlay')
     const gameOverMessage = document.querySelector('#game-over-message')
     overlay.style.display = 'block'
