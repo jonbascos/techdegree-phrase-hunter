@@ -11,7 +11,10 @@ document.querySelector('#btn__reset').addEventListener('click', () => {
 
     // After the game is won or lost, pressing start will reset the keys
     let allKeys = document.querySelectorAll('.key')
-    allKeys.forEach(key => key.className = 'key')
+    allKeys.forEach(key => {
+        key.className = 'key'
+        key.disabled = false
+    })
 
     // After the game is won or lost, pressing start will reset the lives
     let scoreBoard = document.querySelectorAll('#scoreboard img')
