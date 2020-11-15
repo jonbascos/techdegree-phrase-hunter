@@ -91,7 +91,6 @@ handleInteraction(button) {
     if(button.className === 'key') {
         if(game.activePhrase.checkLetter(button.textContent)) {
             button.classList.add('chosen')
-            button.disabled = true
             game.activePhrase.showMatchedLetter(button.textContent)
 
            if(this.checkForWin()) {
