@@ -38,7 +38,6 @@ checkLetter(letter) {
 */
     showMatchedLetter(letter) {
        const matchedLetter = document.getElementsByClassName(letter)
-       console.log(matchedLetter)
        for(let i = 0; i < matchedLetter.length; i++) {
            matchedLetter[i].classList.replace('hide', 'show')
        }

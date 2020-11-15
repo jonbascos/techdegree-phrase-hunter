@@ -41,8 +41,6 @@ startGame() {
     overlay.style.display = 'none'
     this.activePhrase = new Phrase(this.getRandomPhrase())
     this.activePhrase.addPhraseToDisplay()
-    console.log('Active phrase: ', this.activePhrase)
-    console.log(typeof this.activePhrase)
 } 
 
 /**
@@ -93,6 +91,7 @@ handleInteraction(button) {
     if(button.className === 'key') {
         if(game.activePhrase.checkLetter(button.textContent)) {
             button.classList.add('chosen')
+            button.disabled = true
             game.activePhrase.showMatchedLetter(button.textContent)
 
            if(this.checkForWin()) {
