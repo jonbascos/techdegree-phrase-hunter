@@ -76,8 +76,10 @@ gameOver() {
     const gameOverMessage = document.querySelector('#game-over-message')
     overlay.style.display = 'block'
     if(this.missed < 5 && this.checkForWin()) {
+        overlay.classList.add('win')
         gameOverMessage.innerText = 'Good Job! You WON!'
     } else if(this.missed === 5) {
+        overlay.classList.add('lose')
         gameOverMessage.innerText = "I'm sorry!  You lost!"
     }
 };
