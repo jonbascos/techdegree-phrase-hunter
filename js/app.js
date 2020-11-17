@@ -8,6 +8,7 @@ let game
 document.querySelector('#btn__reset').addEventListener('click', () => {
     game = new Game()
     game.startGame()
+    document.querySelector('.start').className = 'start'
 
     // After the game is won or lost, pressing start will reset the keys
     let allKeys = document.querySelectorAll('.key')
